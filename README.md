@@ -1,4 +1,4 @@
-# **Automatyczny Deployment na AWS S3 przy użyciu GitHub Actions (z konfiguracją publicznego hostingu)**
+# **Automatyczny Deployment na AWS S3 przy użyciu GitHub Actions**
 
 Rozszerzona wersja instrukcji obejmuje:
 
