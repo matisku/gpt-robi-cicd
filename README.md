@@ -149,7 +149,7 @@ jobs:
 
 Po uruchomieniu workflow, sprawdź dostępność strony:
 
-1.  Otwórz http://your-bucket-name.s3-website-us-east-1.amazonaws.com
+1.  Otwórz http://your-bucket-name.s3-website-eu-west-1.amazonaws.com
     
 2.  Powinna się wyświetlić Twoja strona HTML! 🎉
     
