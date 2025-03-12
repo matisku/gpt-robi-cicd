@@ -1,5 +1,11 @@
 # **Automatyczny Deployment na AWS S3 przy użyciu GitHub Actions**
 
+```bash
+Prompt:
+Napisz krok po kroku jak jak używając GitHub action zrobić deployment kodu na AWS.
+Opisz wszystkie wymagania, uprawnienia etc. Wygeneruj przykłądową stronę html z prostym kodem javascript.
+```
+
 Rozszerzona wersja instrukcji obejmuje:
 
 ✅ Tworzenie pliku HTML
