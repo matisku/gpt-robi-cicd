@@ -168,6 +168,8 @@ jobs:
 > * Parametr ```--acl public-read``` spowoduje że ta akcja nie zadziała, poniewa nigdzie wcześniej nie było ustawione ACL na S3 bucket
 > * Oczywiście używamy tutaj kluczy, a klucze maja to do siebie że nie rotowane lubią wyciekać
 > * Parametr ```sync .``` spowoduje że cały bucket będzie synchronizowany na S3, a raczej tego nie chcemy
+>   
+> ![bucket-struct](/img/bucket-struct.png)
 
 **6\. Sprawdzenie poprawności wdrożenia**
 -----------------------------------------
