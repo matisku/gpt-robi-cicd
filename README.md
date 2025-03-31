@@ -69,6 +69,20 @@ Wklej następującą politykę (zmieniając your-bucket-name na właściwą na
 ```bash
 http://your-bucket-name.s3-website-us-east-1.amazonaws.com
 ```
+> [!CAUTION]
+> **Upublicznienie w ten sposób strony narazi ją na ataki DDoS!**
+> 
+> Przy założeniu ze kod uruchomieniowy to zwyły test zatem:
+>
+> * Strona waży 1kb
+>
+> * AWS S3 ma wbudowany throtling po 5500req/s
+>
+> * Zakładamy że ktoś przez miesiac robi DDoS na stronę S3
+>
+> Po miesiącu takiego ataku koszt waszego bucketa wynosiłby **~$1,200**
+
+
 **3\. Konfiguracja AWS IAM (Uprawnienia)**
 ------------------------------------------
 
@@ -100,6 +114,7 @@ Musimy utworzyć użytkownika IAM z odpowiednimi uprawnieniami do S3.
 }
 ```
 4. **Zapisz Access Key ID i Secret Access Key**
+   
 **4\. Dodanie Sekretów do GitHub**
 ----------------------------------
 
@@ -112,6 +127,11 @@ Przejdź do **GitHub → Settings → Secrets and variables → Actions → New
 *   `AWS_REGION` → np. `eu-west-1`
     
 *   `S3_BUCKET_NAME` → `your-bucket-name`
+
+> [!CAUTION]
+> Nawet [AWS sugeruje](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-authentication.html) żeby nie używać tej metody autentykacji. 
+> ![image](/img/aws-auth.png)
+> Zamiast tego można użyć dedykowanej roli z użyciem [GitHub jako Identity Provider (IdP) w AWS IAM](https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/). 
 
 **5\. Tworzenie workflow GitHub Actions**
 -----------------------------------------
@@ -143,6 +163,11 @@ jobs:
         run: |
           aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete --acl public-read
 ```
+> [!CAUTION]
+> Pojawia się tutaj klika problemów:
+> * Parametr ```--acl public-read``` spowoduje że ta akcja nie zadziała, poniewa nigdzie wcześniej nie było ustawione ACL na S3 bucket
+> * Oczywiście używamy tutaj kluczy, a klucze maja to do siebie że nie rotowane lubią wyciekać
+> * Parametr ```sync .``` spowoduje że cały bucket będzie synchronizowany na S3, a raczej tego nie chcemy
 
 **6\. Sprawdzenie poprawności wdrożenia**
 -----------------------------------------
@@ -168,3 +193,12 @@ Po uruchomieniu workflow, sprawdź dostępność strony:
 ✅ **Automatyczne wdrażanie z GitHub Actions**
 
 Dzięki temu masz **pełny pipeline CI/CD** dla statycznej strony na AWS S3! 🚀
+
+--------------------------------------------------------------------------------
+> [!TIP]
+> **Wnioski**:
+> * Vibe Coding jest fajny
+> * ... ale wymaga jednak sporo uwagi
+> * Ważne jest żeby wiedzieć co chce się osiągnać
+> * ... i być swiadomym swojej niewiedzy
+> * a za 10 lat, będziecie pracować jako **Senior AI Technical Debt Engineer** :grin:
