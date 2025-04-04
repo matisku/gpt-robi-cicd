@@ -203,4 +203,4 @@ Dzięki temu masz **pełny pipeline CI/CD** dla statycznej strony na AWS S3! �
 > * ... ale wymaga jednak sporo uwagi
 > * Ważne jest żeby wiedzieć co chce się osiągnać
 > * ... i być swiadomym swojej niewiedzy
-> * a za 10 lat, będziecie będziemy pracować jako **Senior AI Technical Debt Engineer** :grin:
+> * a za 10 lat, będziemy pracować jako **Senior AI Technical Debt Engineer** :grin:
