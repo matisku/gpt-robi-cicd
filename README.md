@@ -5,7 +5,7 @@
 > Napisz krok po kroku jak używając GitHub Action zrobić deployment kodu na AWS.
 > Opisz wszystkie wymagania, uprawnienia etc. Wygeneruj przykładową stronę html z prostym kodem javascript.
 
-Rozszerzona wersja instrukcji obejmuje:
+Instrukcja obejmuje:
 
 ✅ Tworzenie pliku HTML
 
