@@ -124,7 +124,7 @@ Przejdź do **GitHub → Settings → Secrets and variables → Actions → New
     
 *   `AWS_SECRET_ACCESS_KEY`
     
-*   `AWS_REGION` → np. `eu-west-1`
+*   `AWS_REGION` → np. `us-east-1`
     
 *   `S3_BUCKET_NAME` → `your-bucket-name`
 
@@ -176,7 +176,7 @@ jobs:
 
 Po uruchomieniu workflow, sprawdź dostępność strony:
 
-1.  Otwórz http://your-bucket-name.s3-website-eu-west-1.amazonaws.com
+1.  Otwórz http://your-bucket-name.s3-website-us-east-1.amazonaws.com
     
 2.  Powinna się wyświetlić Twoja strona HTML! 🎉
     
