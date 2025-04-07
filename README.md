@@ -92,7 +92,9 @@ Musimy utworzyć użytkownika IAM z odpowiednimi uprawnieniami do S3.
     
 2.  **Nadaj dostęp programowy (Programmatic access)**
     
-3.  **Przypisz uprawnienia**Stwórz **politykę IAM** z następującą treścią:
+3.  **Przypisz uprawnienia**
+
+Stwórz **politykę IAM** z następującą treścią:
 ```json
 {
   "Version": "2012-10-17",
