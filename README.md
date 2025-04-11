@@ -40,6 +40,11 @@ Przed rozpoczęciem:
     *   **Block all public access:** **Odznacz** wszystkie opcje
         
     *   **Potwierdź wyłączenie blokady dostępu publicznego**
+
+> [!CAUTION]
+> Nawet AWS sugeruje żeby nie używać tej metody upublickania bucketa S3. 
+> ![image](/img/s3-static.png)
+> Zamiast tego można użyć [AWS Aplify](https://aws.amazon.com/amplify/)
         
 3.  **Przejdź do zakładki "Permissions" → Bucket Policy**
 
